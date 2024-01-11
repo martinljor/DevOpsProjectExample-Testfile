@@ -5,7 +5,7 @@ pipeline {
         maven 'MyMaven'
     }
     environment {
-	    APP_NAME = "DevOpsProjectExample-Testfile"
+	    APP_NAME = "devopsprojectexample-testfile"
             RELEASE = "1.0.0"
             DOCKER_USER = "thegangg" 
             DOCKER_PASS = 'dockerhub-thegangg' 
