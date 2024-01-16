@@ -81,5 +81,13 @@ pipeline {
                }
           }
        }
+
+       stage("Trigger CD Pipeline") {
+            steps {
+                script {
+                    sh "curl -v -k --user martin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'ec2-3-95-232-128.compute-1.amazonaws.com:8080/job/devops-example-project-cd/buildWithParameters?token=devops-example-project-token'"
+                }
+            }
+       }
     }
 }
